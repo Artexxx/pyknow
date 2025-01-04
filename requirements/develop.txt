@@ -1,0 +1,6 @@
+pytest
+coverage
+hypothesis
+hypothesis-pytest
+pycodestyle
+pydocstyle

@@ -1,0 +1,14 @@
+language: python
+python:
+    - "3.4"
+    - "3.5"
+    - "3.6"
+install:
+    - pip install -r requirements/develop.txt
+    - pip install codecov
+    - python setup.py develop
+script:
+  - pycodestyle --show-source --show-pep8 pyknow
+  - coverage run $(which py.test) -m 'not wip' -v tests/unit
+after_success:
+  - codecov
